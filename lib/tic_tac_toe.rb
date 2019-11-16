@@ -15,8 +15,15 @@ class TicTacToe
         puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
     end
      def input_to_index(input)
-         @board[input.to_i]
-       
-     end
-  
+         @board = input.to_i-1
+         #binding.pry
+       end
+       def move(top_left,in_middle)
+          @board[0] = 'X'
+          @board[4] = "O"
+       end
+       def position_taken?(index) #returns true/false based onwhether the position on the board is already occupied
+           
+          
+      end
 end

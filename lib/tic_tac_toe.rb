@@ -22,8 +22,15 @@ class TicTacToe
           @board[0] = 'X'
           @board[4] = "O"
        end
-       def position_taken?(index) #returns true/false based onwhether the position on the board is already occupied
-           
-          
+       def position_taken?(index) #returns true/false based on whether the position on the board is already occupied
+          first_sett = @board[0]
+          second_sett = @board[1]
+          #binding.pry
+          if first_sett == second_sett
+            return false
+          else
+            
+          end
+          return true 
       end
 end

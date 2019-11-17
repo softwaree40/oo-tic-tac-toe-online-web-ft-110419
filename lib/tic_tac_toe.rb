@@ -1,36 +1,31 @@
 require 'pry'
-class TicTacToe
-  
+class  TicTacToe
     WIN_COMBINATIONS = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[4,7,1],[2,5,8],[0,4,8],[6,4,2]]
+  def initialize()
+    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     
-    def initialize
-      @board = [" "," "," "," "," "," "," "," "," "]
-      
-    end
-    def display_board
+  end
+  
+  def display_board
         puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
         puts "-----------"
         puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
         puts "-----------"
         puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
+  end
+  
+  def input_to_index(index)
+      index.to_i-1
+      #bi1nding.pry
+
+  end
+  
+    def move(location, index = "X")
+    @board[index.to_i-1] = index
+    #binding.pry
+  end
+  
+    def position_taken?
+       
     end
-     def input_to_index(input)
-         @board = input.to_i-1
-         #binding.pry
-       end
-       def move(top_left,in_middle)
-          @board[0] = 'X'
-          @board[4] = "O"
-       end
-       def position_taken?(index) #returns true/false based on whether the position on the board is already occupied
-          first_sett = @board[0]
-          second_sett = @board[1]
-          #binding.pry
-          if first_sett == second_sett
-            return false
-          else
-            
-          end
-          return true 
-      end
 end

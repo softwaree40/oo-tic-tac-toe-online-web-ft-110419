@@ -25,7 +25,7 @@ class  TicTacToe
     #binding.pry
   end
   
-    def position_taken?
-       
+    def position_taken?   #postion is not empty 
+       binding.pry
     end
 end

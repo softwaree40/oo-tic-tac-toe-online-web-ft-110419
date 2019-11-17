@@ -12,6 +12,7 @@ class  TicTacToe
         puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
         puts "-----------"
         puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
+         
   end
   
   def input_to_index(index)
@@ -19,13 +20,25 @@ class  TicTacToe
       #bi1nding.pry
 
   end
-  
-    def move(location, index = "X")
-    @board[index.to_i-1] = index
+                                            #  location = 0     token = x
+                                            
+    def move(location, token = "X")        #      move( 0 , O )
+    @board[location] = token
     #binding.pry
   end
   
-    def position_taken?   #postion is not empty 
-       binding.pry
+    def position_taken?(location)   #postion is not empty 
+       @board[location]=="X" || @board[location]=="O"
+       
     end
+     def valid_move?(index)
+       !position_taken?(index) && @board.size > index
+       #binding.pry
+       
+     end
+     def turn_count
+        @board.count {|player| player == "X" || player == "O"}
+        #binding.pry
+     end
+    
 end

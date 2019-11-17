@@ -40,5 +40,10 @@ class  TicTacToe
         @board.count {|player| player == "X" || player == "O"}
         #binding.pry
      end
+     def current_player   #return correct player X for the third move 
+         
+         #binding.pry
+       
+     end
     
 end

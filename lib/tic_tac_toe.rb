@@ -65,7 +65,7 @@ class  TicTacToe
          end
          combo
      end
-     
+
      def full?
         #iterate over each element in the array that represents a space on the board, and check to see if each element is occupied  
         #only want to return true if the board is full 
@@ -73,7 +73,7 @@ class  TicTacToe
         
          @board.each do |space|
            if space == "X" || space == "O"
-            #do nothing
+          #do nothing
           else
            return  false 
             end
@@ -106,10 +106,17 @@ class  TicTacToe
        #is it X or O?
        #our won? method returns the winning combination, which is an array of the 3 indices that won
        #we can use one of the 3 indices to look at our board and see whether "X" or "O" won 
-       if @board[0] 
-         return "X"
-       else 
-         return "O"
-       end
-   end
-end 
+          
+          #binding.pry
+         if won? 
+           @board[won?[0]]
+          end
+      end 
+      def play 
+        input = gets.strip  #I need check if game is over after every turn              
+      binding.pry    
+     end
+end
+    
+
+

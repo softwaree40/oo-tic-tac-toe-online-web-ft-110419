@@ -57,7 +57,8 @@ class  TicTacToe
      def won?
         combo = false
          WIN_COMBINATIONS.each do |array|
-            if position_taken?(array[0]) && @board[array[0]] == @board[array[1]] && @board[array[1]] == @board[array[2]]
+            if position_taken?(array[0]) && @board[array[0]] == @board[array[1]] && @board[array[1]] == @board[array[2]] 
+               binding.pry
               combo = array
               return combo
             end

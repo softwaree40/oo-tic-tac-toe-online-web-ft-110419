@@ -107,8 +107,9 @@ class  TicTacToe
        #our won? method returns the winning combination, which is an array of the 3 indices that won
        #we can use one of the 3 indices to look at our board and see whether "X" or "O" won 
        if @board[0] 
-         #binding.pry
          return "X"
+       else 
+         return "O"
        end
    end
 end 

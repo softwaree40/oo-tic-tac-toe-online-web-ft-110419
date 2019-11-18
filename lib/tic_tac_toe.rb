@@ -58,14 +58,57 @@ class  TicTacToe
         combo = false
          WIN_COMBINATIONS.each do |array|
             if position_taken?(array[0]) && @board[array[0]] == @board[array[1]] && @board[array[1]] == @board[array[2]] 
-               binding.pry
+               #binding.pry
               combo = array
               return combo
             end
          end
          combo
      end
-     def full?  #method want me to return true for draw 
-       
+     
+     def full?
+        #iterate over each element in the array that represents a space on the board, and check to see if each element is occupied  
+        #only want to return true if the board is full 
+        #otherwise we want to return false
+        
+         @board.each do |space|
+           if space == "X" || space == "O"
+            #do nothing
+          else
+           return  false 
+            end
+         #binding.pry
+          end
      end
-  end
+     
+     def draw?
+       #a draw is when nobody wins, meaning that the board is full, and nobody won 
+       
+       if full? && !won?
+         return true 
+       else 
+         return false 
+       end
+     end
+     
+     def over? 
+       #when is the game over 
+       #the game is over when the board is full OR somebody won 
+       
+       if full? || won?
+         return true 
+       else 
+        return  false 
+       end
+     end
+     
+     def winner 
+       #is it X or O?
+       #our won? method returns the winning combination, which is an array of the 3 indices that won
+       #we can use one of the 3 indices to look at our board and see whether "X" or "O" won 
+       if @board[0] 
+         #binding.pry
+         return "X"
+       end
+   end
+end 

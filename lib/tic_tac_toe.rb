@@ -46,8 +46,9 @@ class  TicTacToe
     def turn
         input = gets.strip               #The placement of X on board 
         index = input_to_index(input)
+        #binding.pry
         if valid_move?(index)   
-          move(index,current_player)                               #if valide_move is true then i can move to play game
+          move(index,current_player)                                                  #if valide_move is                true then i can move to play game
         else
           turn 
         end
@@ -95,7 +96,7 @@ class  TicTacToe
        #when is the game over 
        #the game is over when the board is full OR somebody won 
        
-       if full? || won?
+       if draw? || won?
          return true 
        else 
         return  false 
@@ -111,14 +112,15 @@ class  TicTacToe
          if won? 
            @board[won?[0]]
          end
-     end 
-     def play
-        input = gets.strip
-       if won? || draw?
-         return over?
-       else
-         turn 
-       end
-       
      end
-end
+     
+     def play
+        turn until over?
+        if won?
+         puts "Congratulations #{winner}!"
+       else
+          puts "Cat's Game!"
+      end
+    end
+  end
+  

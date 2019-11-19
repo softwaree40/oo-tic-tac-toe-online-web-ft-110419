@@ -72,13 +72,13 @@ class  TicTacToe
         #otherwise we want to return false
         
          @board.each do |space|
-           if space == "X" || space == "O"
+            if space == "X" || space == "O"
           #do nothing
-          else
+           else
            return  false 
-            end
+           end
          #binding.pry
-          end
+        end
      end
      
      def draw?
@@ -100,9 +100,9 @@ class  TicTacToe
        else 
         return  false 
        end
-     end
+    end
      
-     def winner 
+    def winner 
        #is it X or O?
        #our won? method returns the winning combination, which is an array of the 3 indices that won
        #we can use one of the 3 indices to look at our board and see whether "X" or "O" won 
@@ -110,13 +110,14 @@ class  TicTacToe
           #binding.pry
          if won? 
            @board[won?[0]]
-          end
-      end 
-      def play 
-        input = gets.strip  #I need check if game is over after every turn              
-      binding.pry    
+         end
+     end 
+     def play
+        input = gets.strip
+       if won? || draw?
+         return over?
+       else
+         turn 
+       end
      end
 end
-    
-
-

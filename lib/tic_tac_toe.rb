@@ -120,7 +120,14 @@ class  TicTacToe
          puts "Congratulations #{winner}!"
        else
           puts "Cat's Game!"
+<<<<<<< HEAD
       end
     end
   end
   
+=======
+        end
+    end
+  end
+  game = 
+>>>>>>> 1f6f47e22f148df4ca564b59cd1cb814c7aa1971
